@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { userIdAtom } from "../../atom/users";
-import User from "./user";
+import EditUser from "./editUser";
 
 const UserWrapper = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const UserWrapper = () => {
     }
   }, [id, userID, setUserId]);
 
-  return userID === id ? <User /> : <div>wait for id...</div>
+  return userID === id ? <EditUser /> : <div>wait for id...</div>
 }
 
 export default UserWrapper;

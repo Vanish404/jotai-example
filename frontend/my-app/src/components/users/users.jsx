@@ -9,12 +9,17 @@ const Users = () => {
   const [users] = useAtom(usersQueryAtom);
 
   const handleRedirect = useCallback((id) => () => {
-    histroy.push(`/users/${id}`)
+    histroy.push(`/users/${id}/edit`)
   }, [histroy]);
+
+  const handleCreateUser = useCallback(() => {
+    histroy.push(`/users/new`);
+  }, [histroy])
 
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100%" }}>
-      {users && users?.map(user => (
+      <button type="button" onClick={handleCreateUser}>create user</button>
+      {users?.map(user => (
         <ul key={user.id}>
           <li>
             {user.name}
