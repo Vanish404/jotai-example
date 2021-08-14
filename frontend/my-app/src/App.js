@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Users from "./components/users/users";
 import User from "./components/users/user";
+import UserWrapper from "./components/users/userWrapper";
 
 const App = () => (
   <Provider>
@@ -12,7 +13,7 @@ const App = () => (
         <div style={{height: "100vh" }}>
         <Switch>
           <Route exact path="/users" component={Users} />
-          <Route exact path="/users/:id" component={User} />
+            <Route exact path="/users/:id" component={UserWrapper} />
         </Switch>
         </div>
       </Suspense>
